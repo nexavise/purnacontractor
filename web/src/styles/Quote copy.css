@@ -1,0 +1,467 @@
+/* PAGE */
+.quote-page {
+  background: linear-gradient(180deg, #ffeb3b, #ffc107);
+  padding-bottom: 80px;
+}
+
+/* ================= HERO ================= */
+.quote-hero {
+  height: 480px; /* ⬅️ taller hero like second image */
+  background:
+    linear-gradient(rgb(49 43 9), rgb(174 164 31 / 45%)),
+    url(/src/images/quotes/quote.png) center / cover no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* centered overlay */
+.quote-overlay {
+  text-align: center;
+  max-width: 900px;
+  padding: 40px 32px;
+  color: #fff;
+}
+
+/* headline */
+.quote-overlay h1 {
+  font-size: 48px; /* ⬅️ bigger & bolder */
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* description */
+.quote-overlay p {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* yellow accent line */
+.quote-hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: #ffb400;
+}
+
+/* ================= FEATURES ================= */
+.quote-features {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.feature-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card svg {
+  font-size: 34px;
+  color: #ffb400;
+  margin-bottom: 12px;
+}
+
+.feature-card h4 {
+  margin-bottom: 6px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* ================= FORM ================= */
+.quote-form-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+  margin-top: 65px;
+}
+
+.form-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.form-card h3 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.form-grid input,
+.form-card textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.form-grid .full {
+  grid-column: span 2;
+}
+
+.form-card textarea {
+  resize: none;
+}
+
+/* SUBMIT */
+.quote-submit {
+  margin: 30px auto 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffb400;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.quote-note {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* ================= PROCESS ================= */
+.quote-process {
+  margin-top: 80px;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.quote-process h2 {
+  font-size: 34px;
+  margin-bottom: 40px;
+}
+
+/* PROCESS GRID */
+.process-line {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.step {
+  background: #fff9d6;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.step svg {
+  font-size: 26px;
+  color: #ffb400;
+}
+
+.step h4 {
+  margin-bottom: 15px;
+}
+
+/* ================= SUCCESS STATE ================= */
+
+.quote-success {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(
+    135deg,
+    #f8f9fa,
+    #ffffff
+  );
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+  max-width: 720px;
+  margin: 80px auto;
+}
+
+.quote-success svg {
+  margin-bottom: 20px;
+  filter: drop-shadow(0 6px 12px rgba(46, 204, 113, 0.3));
+}
+
+.quote-success h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.quote-success p {
+  font-size: 1.05rem;
+  color: #666;
+}
+
+.quote-suc1{
+  padding: 40px;
+}
+
+.quote-overlay h1, .quote-overlay p, .form-card h3{
+  cursor: default;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .quote-success {
+    margin: 40px 16px;
+    padding: 40px 20px;
+  }
+
+  .quote-success h2 {
+    font-size: 1.8rem;
+  }
+}
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .quote-features {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+
+  .process-line {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid .full {
+    grid-column: span 1;
+  }
+
+  .quote-overlay h1 {
+    font-size: 34px;
+  }
+
+  .quote-process h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quote-hero {
+    height: 280px;
+  }
+
+  .quote-overlay p {
+    font-size: 14px;
+  }
+
+  .form-card {
+    padding: 22px;
+  }
+}
+
+:root {
+  --yellow: #ffc400;
+  --text-dark: #0f172a;
+  --text-light: #64748b;
+  --bg: #fffaf5;
+}
+
+/* SECTION */
+.process-section {
+  background: var(--bg);
+  padding: 50px 40px;
+}
+
+/* TITLE */
+.process-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 80px;
+  color: var(--text-dark);
+}
+
+/* WRAPPER */
+.process-wrapper {
+  position: relative;
+  max-width: 1300px;
+  height: 420px;
+  margin: auto;
+  background-color: #feeeb3;
+  border-radius: 30px;
+}
+
+/* CURVE */
+.process-line {
+  position: absolute;
+  top: 91px;
+  left: 102px;
+  width: 100%;
+  height: 260px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* STEP BASE */
+.step {
+  position: absolute;
+  width: 220px;
+  text-align: center;
+  z-index: 2;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* CIRCLE */
+.circle {
+  width: 79px;
+  height: 79px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid rgba(255, 196, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 auto;
+  color: var(--text-dark);
+  border: 7px solid #ffc810;
+}
+
+/* CONTENT */
+.step-content {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-content h4 {
+  color: #ffb400;
+}
+
+.step-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.step-content p {
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 200px;
+  color: var(--text-light);
+}
+
+/* POSITIONING — EXACT */
+.step-1 {
+  top: 95px;
+  left: 15px;
+}
+
+.step-2 {
+  left: 324px;
+  bottom: 84px;
+}
+
+.step-3 {
+  left: 546px;
+  top: 95px;
+}
+
+.step-4 {
+  right: 318px;
+  bottom: 75px;
+}
+
+.step-5 {
+  top: 94px;
+  right: 19px;
+}
+
+
+/* STEP 4 — vertical stack like first image */
+.step-4 {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+/* Push text ABOVE the circle */
+.step-4 .step-content {
+  margin-bottom: 18px;
+  margin-top: 0;
+}
+
+/* Clean spacing */
+.step-4 h3 {
+  margin-top: 6px;
+}
+
+.step-4 p {
+  margin-top: 6px;
+  text-align: center;
+}
+
+/* Ensure circle stays visually dominant */
+.step-4 .circle {
+  margin-top: 0;
+}
+
+/* TEXT ADJUSTMENTS */
+/* STEP 02 — text BELOW the circle */
+.step-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* STEP 02 — same layout as STEP 04 */
+.step-2 {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.step-2 .step-content {
+  margin-bottom: 18px;
+  margin-top: 0;
+  text-align: center;
+}
+
+
+.step-2 .step-content {
+  margin-top: 16px;   /* normal spacing */
+}

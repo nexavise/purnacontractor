@@ -1,0 +1,496 @@
+/* ==================================================
+   PAGE WRAPPER
+================================================== */
+
+.ds-page {
+  position: relative;
+  min-height: 100vh;
+  background-color: #0b0b0b;
+  overflow: hidden;
+}
+
+/* Background layer */
+.ds-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-url);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 110%;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  z-index: 0;
+}
+
+/* When image is ready */
+.ds-page.bg-loaded::before {
+  opacity: 1;
+}
+
+/* Keep content above background */
+.ds-overlay {
+  position: relative;
+  z-index: 1;
+}
+
+.ds-page {
+  min-height: 100vh; /* lock height */
+  background-color: #0b0b0b; /* fallback color */
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 110%;
+  will-change: opacity;
+}
+
+/* ==================================================
+   OVERLAY
+================================================== */
+.ds-overlay {
+  padding: 80px 40px;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55));
+}
+
+/* ==================================================
+   GRID LAYOUT
+================================================== */
+.ds-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+}
+
+.ds-section {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+/* ==================================================
+   HERO SECTION
+================================================== */
+.ds-hero {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #ffffff;
+}
+
+.ds-hero h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.ds-hero p {
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* ==================================================
+   SERVICE CARDS
+================================================== */
+.ds-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-auto-rows: 220px;
+  gap: 32px;
+}
+
+.ds-card {
+  position: relative;
+  height: 220px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+/* Card image layer */
+.ds-card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+/* Image zoom ONLY on hover */
+.ds-card:hover .ds-card-bg {
+  transform: scale(1.15);
+}
+
+/* Card overlay content */
+.ds-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.15));
+  color: #ffffff;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.ds-card-overlay h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.ds-card-overlay p {
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/* ==================================================
+   FORM PANEL
+================================================== */
+.ds-form {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 32px;
+  border-radius: 22px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.ds-form h2 {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+/* Form layout */
+.ds-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ds-row {
+  display: flex;
+  gap: 12px;
+}
+
+/* Inputs */
+.ds-form input,
+.ds-form textarea {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.ds-form textarea {
+  resize: none;
+  min-height: 90px;
+}
+
+.ds-form input:focus,
+.ds-form textarea:focus {
+  outline: none;
+  border-color: #ff9800;
+  box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.3);
+}
+
+/* Button */
+.ds-form button {
+  margin-top: 10px;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.ds-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.ds-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ==================================================
+   SUCCESS STATE
+================================================== */
+.ds-success {
+  text-align: center;
+}
+
+/* ==================================================
+   SKELETON LOADER
+================================================== */
+
+.ds-card.is-loading {
+  pointer-events: none;
+}
+
+.ds-skeleton {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  background-size: 200% 100%;
+  animation: shine 1.5s linear infinite;
+}
+
+/* Smooth fade-in when image loads */
+.ds-card-bg {
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+.ds-form-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.ds-icon {
+  font-size: 24px;
+  color: #ff9800;
+}
+
+.ds-icon.success {
+  color: #4caf50;
+}
+
+.ds-page::before {
+  opacity: 1 !important;
+}
+
+.ds-hero h1,
+.ds-hero p {
+  cursor: default;
+}
+
+.ds-card-bg {
+  transform: translateZ(0);
+  will-change: opacity, transform;
+}
+
+/* ==================================================
+   ACCESSIBILITY: REDUCED MOTION
+================================================== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+/* ==================================================
+   RESPONSIVE MEDIA QUERIES
+================================================== */
+
+/* ---------- Large Screens (≤1200px) ---------- */
+@media (max-width: 1200px) {
+  .ds-grid {
+    gap: 40px;
+  }
+
+  .ds-hero h1 {
+    font-size: 38px;
+  }
+
+  .ds-hero p {
+    font-size: 17px;
+  }
+
+  .ds-page::before {
+    background-size: 120%;
+  }
+}
+
+/* ---------- Tablets (≤1024px) ---------- */
+@media (max-width: 1024px) {
+  .ds-grid {
+    grid-template-columns: 1.4fr 1fr;
+    gap: 36px;
+  }
+
+  .ds-overlay {
+    padding: 70px 30px;
+  }
+
+  .ds-form {
+    padding: 28px;
+  }
+}
+
+/* ---------- Tablets / Small Laptops (≤768px) ---------- */
+@media (max-width: 768px) {
+  .ds-page {
+    background-color: var(--yellow);
+  }
+  .ds-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .ds-overlay {
+    padding: 60px 24px;
+  }
+
+  .ds-hero h1 {
+    font-size: 34px;
+  }
+
+  .ds-hero p {
+    font-size: 16px;
+  }
+
+  .ds-cards {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+
+  .ds-form {
+    padding: 26px;
+  }
+
+  .ds-page::before {
+    background-size: 160%;
+    background-position: center top;
+  }
+}
+
+/* ---------- Mobile (≤600px) ---------- */
+@media (max-width: 600px) {
+  .ds-overlay {
+    padding: 50px 20px;
+  }
+
+  .ds-hero {
+    margin-bottom: 40px;
+  }
+
+  .ds-cards {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 225px;
+    gap: 22px;
+  }
+
+  .ds-card {
+    border-radius: 16px;
+  }
+
+  .ds-form h2 {
+    font-size: 22px;
+  }
+}
+
+/* ---------- Small Phones (≤480px) ---------- */
+@media (max-width: 480px) {
+  .ds-overlay {
+    padding: 45px 16px;
+  }
+
+  .ds-hero h1 {
+    font-size: 28px;
+  }
+
+  .ds-hero p {
+    font-size: 15px;
+  }
+
+  .ds-card-overlay h3 {
+    font-size: 16px;
+  }
+
+  .ds-card-overlay p {
+    font-size: 13px;
+  }
+
+  .ds-row {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .ds-form {
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+
+  .ds-form input,
+  .ds-form textarea {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .ds-form button {
+    font-size: 15px;
+    padding: 13px;
+  }
+
+  .ds-page::before {
+    background-size: 190%;
+  }
+}
+
+/* ---------- Extra Small Phones (≤360px / 320px) ---------- */
+@media (max-width: 360px) {
+  .ds-card {
+    position: relative;
+    height: 182px;
+  }
+  .ds-overlay {
+    padding: 40px 14px;
+  }
+
+  .ds-hero h1 {
+    font-size: 24px;
+  }
+
+  .ds-hero p {
+    font-size: 14px;
+  }
+
+  .ds-cards {
+    grid-auto-rows: 180px;
+    gap: 18px;
+  }
+
+  .ds-form {
+    padding: 18px 14px;
+  }
+
+  .ds-form input,
+  .ds-form textarea {
+    font-size: 12px;
+    padding: 11px;
+  }
+
+  .ds-form button {
+    font-size: 14px;
+    padding: 12px;
+  }
+}

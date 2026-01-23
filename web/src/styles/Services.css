@@ -1,0 +1,841 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --yellow: #ffc400;
+  --text-dark: #0f172a;
+  --text-light: #64748b;
+  --bg: #fffaf5;
+}
+
+.services-page {
+  background: linear-gradient(180deg, #ffeb3b, #ffc107);
+  padding-bottom: 25px;
+}
+.services-hero {
+  position: relative;
+  min-height: calc(70vh + 53px);
+  padding-top: 72px; /* 🔑 navbar height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url("../images/services/servicemain.png") center/cover no-repeat;
+  background-position: center top;
+  overflow: hidden;
+}
+
+/* Dark overlay (key difference) */
+.services-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+/* Text content */
+.services-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+/* Title */
+.services-hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+/* Description */
+.services-hero-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #000;
+}
+
+/* SERVICES */
+.services-list {
+  padding: 80px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Card */
+.service-card-row {
+  background: #ffffff;
+  border-radius: 0px 30px;
+  padding: 40px;
+  display: flex;
+  gap: 60px;
+  align-items: center; /* FIX: vertical centering */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* Reverse layout */
+.service-card-row.reverse {
+  flex-direction: initial;
+}
+
+/* Image */
+.service-card-row img {
+  width: 45%;
+  height: 100%;
+  object-fit: cover; /* FIX: no stretch */
+  border-radius: 20px;
+}
+
+/* Content */
+.service-s-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* FIX: vertical alignment */
+}
+
+/* Icon */
+.service-s-content > svg {
+  margin-bottom: 0px;
+  width: 48px;
+}
+
+/* Title */
+.service-s-content h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* List */
+.service-s-content ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px; /* FIX: line spacing */
+}
+
+/* List item */
+.service-s-content li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* List icon */
+.service-s-content li svg {
+  flex-shrink: 0;
+}
+
+
+.service-card-row .service-s-content {
+  margin-right: 40px;
+}
+
+/* Default image spacing */
+.service-card-row img {
+  margin: 0;
+}
+
+/* Add margin on the right when card is reversed */
+.service-card-row.reverse img {
+  margin-right: 85px;
+  margin-left: 0;
+}
+
+.service-card-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.service-card-row.reverse .service-s-content {
+  padding-left: 105px;
+  margin-right: 0;
+}
+
+/* PROCESS */
+/* .process {
+  background: #fff8f0;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.step span {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffb400;
+} */
+
+/* Section */
+
+
+/* scta */
+.scta {
+  background: linear-gradient(180deg, #ffc400 0%, #ffb300 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* scta Container */
+.scta__container {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 48px 32px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* scta Title */
+.scta__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+/* scta Description */
+.scta__description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4b5563;
+  max-width: 650px;
+  margin: 0 auto 32px;
+}
+
+/* scta Actions */
+.scta__actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* scta Buttons */
+.scta__button {
+  padding: 12px 22px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+/* Primary Button */
+.scta__button--primary {
+  background-color: #facc15;
+  color: #111827;
+  font-weight: 600;
+}
+
+.scta__button--primary:hover {
+  background-color: #eab308;
+}
+
+/* Secondary Button */
+.scta__button--secondary {
+  background-color: transparent;
+  color: #111827;
+  border: 1px solid #d1d5db;
+}
+
+.scta__button--secondary:hover {
+  background-color: #f3f4f6;
+}
+
+/* Arrow */
+.scta__arrow {
+  font-size: 1rem;
+}
+
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.arrow-icon {
+  transition: transform 0.25s ease;
+}
+
+.submit-btn:hover .arrow-icon {
+  transform: translateX(6px);
+}
+
+.s-btn {
+  z-index: 2;
+}
+
+/* ===============================
+   SCTA Attractive Animations
+================================ */
+
+/* Primary Button – Pulse + Glow */
+.scta__button--primary {
+  background-color: #facc15;
+  color: #111827;
+  font-weight: 600;
+
+  animation: sctaPulseGlow 2.6s infinite;
+}
+
+.services-hero-content,
+.service-s-content h3,
+.service-s-content ul,
+.process-title,
+.step .circle,
+.step-content,
+.scta__title,
+.scta__description {
+  cursor: default;
+}
+
+@keyframes sctaPulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.6);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 18px 6px rgba(250, 204, 21, 0.45);
+    transform: scale(1.04);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.6);
+    transform: scale(1);
+  }
+}
+
+/* Arrow Movement */
+.scta__arrow {
+  display: inline-flex;
+  animation: sctaArrowMove 1.4s infinite;
+}
+
+@keyframes sctaArrowMove {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Secondary Button – Soft Float */
+.scta__button--secondary {
+  background-color: transparent;
+  color: #111827;
+  border: 1px solid #d1d5db;
+
+  animation: sctaFloatBtn 3.2s ease-in-out infinite;
+}
+
+@keyframes sctaFloatBtn {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-hero {
+    min-height: calc(70vh + 72px);
+    background-position: left top;
+  }
+  .services-list {
+    padding: 80px 45px;
+  }
+  .service-card-row,
+  .service-card-row.reverse {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .service-card-row img {
+    width: 100%;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .scta-buttons {
+    flex-direction: column;
+  }
+
+  .services-scta {
+    margin: 40px 20px;
+    padding: 40px 20px;
+  }
+
+  .service-card-row.reverse img {
+    margin-right: 0px;
+  }
+
+  .service-card-row.reverse .service-s-content {
+    padding-left: 0px;
+    gap: 20px;
+  }
+
+  .service-s-content {
+    flex-direction: row;
+  }
+
+  .service-s-content {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: start;
+    column-gap: 20px;
+  }
+
+  .service-s-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .service-s-content {
+    width: -webkit-fill-available;
+    max-width: none; /* 🔑 remove cap */
+    margin: 0px 7%;
+  }
+
+  /* LEFT SIDE (icon + title) */
+  .service-left {
+    /* flex: 0 0 220px; */
+    width: 50%;
+  }
+
+  /* RIGHT SIDE (points) */
+  .service-right {
+    flex: 1; /* takes remaining space */
+  }
+}
+
+@media (max-width: 606px) {
+  .service-s-content {
+    display: block;
+  }
+
+  .service-left {
+    width: 100%;
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: center;
+  }
+
+  .service-s-content h3 {
+    margin: 0;
+    margin-left: 15px;
+  }
+
+  .service-right li {
+    margin: auto;
+  }
+}
+
+@media (max-width: 426px) {
+  .services-hero {
+    min-height: calc(70vh + 72px);
+    background-position: center top;
+  }
+
+  .service-card-row .service-s-content {
+    margin-right: 0px;
+    margin-bottom: 35px;
+  }
+
+  .service-s-content {
+    margin-left: 0;
+  }
+
+  .service-right li {
+    margin-left: 15px;
+  }
+  .service-s-content h3 {
+    font-size: 22px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 320px) {
+  .services-hero-content h1 {
+    font-size: 40px;
+  }
+  .services-hero-content p {
+    font-size: 13px;
+  }
+  .services-list {
+    padding: 40px 15px;
+  }
+
+  .service-s-content h3 {
+    font-size: 22px;
+    margin: auto 0;
+    margin-left: 10px;
+  }
+
+  .service-card-row,
+  .service-card-row.reverse {
+    flex-direction: column;
+    padding: 15px;
+  }
+}
+
+
+/* ===============================
+   PROCESS SECTION
+================================ */
+
+.process-section {
+  background: var(--bg);
+  padding: 50px 40px;
+}
+
+/* TITLE */
+.process-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 80px;
+  color: var(--text-dark);
+}
+
+/* WRAPPER */
+.process-wrapper {
+  position: relative;
+  max-width: 1200px;
+  height: 420px;
+  margin: auto;
+}
+
+/* CURVE */
+.process-line {
+  position: absolute;
+  top: 120px;
+  left: 0;
+  width: 100%;
+  height: 260px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ===============================
+   STEP BASE (DESKTOP)
+================================ */
+
+.process-steps {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.step {
+  position: absolute;
+  width: 220px;
+  text-align: center;
+  z-index: 2;
+  background: transparent;
+  box-shadow: none;
+  opacity: 0;
+}
+
+/* CIRCLE */
+.circle {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid rgba(255, 196, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 auto;
+  color: var(--text-dark);
+}
+
+/* CONTENT */
+.step-content {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 16px 0 8px;
+}
+
+.step-content p {
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 200px;
+  color: var(--text-light);
+  text-align: center;
+}
+
+/* ===============================
+   DESKTOP POSITIONS
+================================ */
+
+.p-step-1 {
+  top: 40px;
+  left: 145px;
+}
+
+.p-step-2 {
+  left: 412px;
+  bottom: 20px;
+}
+
+.p-step-3 {
+  top: 45px;
+  right: 405px;
+}
+
+.p-step-4 {
+  right: 135px;
+  bottom: 12px;
+}
+
+/* STEP 4 STACK */
+.p-step-4 {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.p-step-4 .step-content {
+  margin-bottom: 18px;
+}
+
+/* ===============================
+   STEP ANIMATIONS
+================================ */
+
+.step.is-visible {
+  opacity: 1;
+}
+
+.animate-step-1 {
+  animation: stepFromBottom 1.5s ease forwards;
+}
+
+.animate-step-2 {
+  animation: stepFromTop 1.5s ease forwards;
+}
+
+.animate-step-3 {
+  animation: stepFromBottom 1.5s ease forwards;
+}
+
+.animate-step-4 {
+  animation: stepFromTop 1.5s ease forwards;
+}
+
+@keyframes stepFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes stepFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= 1340px → 1215px ================= */
+
+@media (max-width: 1340px) {
+  .p-step-3 {
+    right: calc(
+      245px + (405 - 245) * ((100vw - 1215px) / (1340 - 1215))
+    );
+  }
+
+  .p-step-4 {
+    right: calc(
+      0px + (135 - 0) * ((100vw - 1215px) / (1340 - 1215))
+    );
+    bottom: calc(
+      20px + (12 - 20) * ((100vw - 1215px) / (1340 - 1215))
+    );
+  }
+}
+
+
+/* ================= ≤ 1214px ================= */
+
+@media (max-width: 1214px) {
+  .process-line {
+    left: 0px !important;
+  }
+
+  .p-step-1 {
+    top: 58px;
+    left: 43px;
+  }
+
+  .p-step-2 {
+    left: 311px;
+    bottom: 46px;
+  }
+
+  .p-step-3 {
+    top: 58px;
+    right: 345px;
+  }
+
+  .p-step-4 {
+    right: 67px;
+    bottom: 35px;
+  }
+}
+
+
+/* ======================================================
+   TABLET LAYOUT — TRUE SIDE-BY-SIDE COLUMNS (≤1024)
+====================================================== */
+/* ======================================================
+   TABLET — FLEX SIDE-BY-SIDE COLUMNS (≤1024)
+====================================================== */
+
+@media (max-width: 1024px) {
+  .process-wrapper {
+    height: auto !important;
+  }
+
+  .process-line {
+    display: none !important;
+  }
+
+  .process-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+    height: auto;
+  }
+
+  .step {
+    position: relative;
+    flex: 1;                 /* 🔑 equal columns */
+    max-width: 25%;
+    opacity: 1;
+    transform: none !important;
+    text-align: center;
+  }
+
+  /* REMOVE DESKTOP COORDINATES */
+  .p-step-1,
+  .p-step-2,
+  .p-step-3,
+  .p-step-4 {
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+  }
+
+  /* SCALE ELEMENTS */
+  .circle {
+    width: clamp(64px, 7vw, 80px);
+    height: clamp(64px, 7vw, 80px);
+    font-size: clamp(14px, 1.8vw, 18px);
+  }
+
+  .step-content h3 {
+    font-size: clamp(16px, 1.6vw, 18px);
+  }
+
+  .step-content p {
+    font-size: clamp(13px, 1.4vw, 15px);
+  }
+
+  .step-content svg {
+    width: clamp(22px, 2.5vw, 32px);
+    height: auto;
+  }
+}
+
+/* ===============================
+   PROCESS — MOBILE FIX (≤768px)
+================================ */
+
+@media (max-width: 768px) {
+  /* Remove SVG curve */
+  .process-line {
+    display: none;
+  }
+
+  /* Let wrapper grow with content */
+  .process-wrapper {
+    height: auto;
+  }
+
+  /* Stack steps naturally */
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /* Remove absolute positioning influence */
+  .step {
+    position: relative;
+    width: 100%;
+  }
+
+  .p-step-1,
+  .p-step-2,
+  .p-step-3,
+  .p-step-4 {
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+  }
+}
+
