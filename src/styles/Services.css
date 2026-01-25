@@ -1,0 +1,897 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --yellow: #ffc400;
+  --text-dark: #0f172a;
+  --text-light: #64748b;
+  --bg: #fffaf5;
+}
+
+.services-page {
+  background: linear-gradient(180deg, #ffeb3b, #ffc107);
+  padding-bottom: 25px;
+}
+
+.services-hero {
+  position: relative;
+  min-height: calc(70vh + 53px);
+  padding-top: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background-image: url("../images/services/house-renovation.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 49% center;
+
+  overflow: hidden;
+}
+
+/* Dark overlay (key difference) */
+.services-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+/* Text content */
+.services-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+/* Title */
+.services-hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+/* Description */
+.services-hero-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #000;
+}
+
+/* SERVICES */
+.services-list {
+  padding: 80px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Card */
+.service-card-row {
+  background: #ffffff;
+  border-radius: 0px 30px;
+  padding: 40px;
+  display: flex;
+  gap: 60px;
+  align-items: center; /* FIX: vertical centering */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* Reverse layout */
+.service-card-row.reverse {
+  flex-direction: initial;
+}
+
+.servicelist .animated-service-img-wrapper {
+  position: relative;
+  inset: 0;
+  width: 45%;
+  height: 100%;
+}
+
+/* Image */
+.service-card-row .ser-img {
+  width: 45%;
+  height: 100%;
+  object-fit: cover; /* FIX: no stretch */
+  border-radius: 20px;
+}
+
+/* Content */
+.service-s-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* FIX: vertical alignment */
+}
+
+/* Icon */
+.service-s-content > svg {
+  margin-bottom: 0px;
+  width: 48px;
+}
+
+/* Title */
+.service-s-content h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* List */
+.service-s-content ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px; /* FIX: line spacing */
+}
+
+/* List item */
+.service-s-content li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* List icon */
+.service-s-content li svg {
+  flex-shrink: 0;
+}
+
+.service-card-row .service-s-content {
+  margin-right: 40px;
+}
+
+/* Default image spacing */
+.service-card-row .ser-img {
+  margin: 0;
+}
+
+/* Add margin on the right when card is reversed */
+.service-card-row.reverse .ser-img {
+  margin-right: 85px;
+  margin-left: 0;
+}
+
+.service-card-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.service-card-row.reverse .service-s-content {
+  padding-left: 105px;
+  margin-right: 0;
+}
+
+/* scta */
+.scta {
+  background: linear-gradient(180deg, #ffc400 0%, #ffb300 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* scta Container */
+.scta__container {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 48px 32px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* scta Title */
+.scta__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+/* scta Description */
+.scta__description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4b5563;
+  max-width: 650px;
+  margin: 0 auto 32px;
+}
+
+/* scta Actions */
+.scta__actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* scta Buttons */
+.scta__button {
+  padding: 12px 22px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+/* Primary Button */
+.scta__button--primary {
+  background-color: #facc15;
+  color: #111827;
+  font-weight: 600;
+}
+
+.scta__button--primary:hover {
+  background-color: #eab308;
+}
+
+/* Secondary Button */
+.scta__button--secondary {
+  background-color: transparent;
+  color: #111827;
+  border: 1px solid #d1d5db;
+}
+
+.scta__button--secondary:hover {
+  background-color: #f3f4f6;
+}
+
+/* Arrow */
+.scta__arrow {
+  font-size: 1rem;
+}
+
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.arrow-icon {
+  transition: transform 0.25s ease;
+}
+
+.submit-btn:hover .arrow-icon {
+  transform: translateX(6px);
+}
+
+.s-btn {
+  z-index: 2;
+}
+
+/* ===============================
+   SCTA Attractive Animations
+================================ */
+
+/* Primary Button – Pulse + Glow */
+.scta__button--primary {
+  animation: sctaPulseGlow 2.6s infinite;
+}
+
+.services-hero-content,
+.service-s-content h3,
+.service-s-content ul,
+.p-process-title,
+.p-step .p-circle,
+.p-step-content,
+.scta__title,
+.scta__description {
+  cursor: default;
+}
+
+@keyframes sctaPulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.6);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 18px 6px rgba(250, 204, 21, 0.45);
+    transform: scale(1.04);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.6);
+    transform: scale(1);
+  }
+}
+
+/* Arrow Movement */
+.scta__arrow {
+  display: inline-flex;
+  animation: sctaArrowMove 1.4s infinite;
+}
+
+@keyframes sctaArrowMove {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Secondary Button – Soft Float */
+.scta__button--secondary {
+  animation: sctaFloatBtn 3.2s ease-in-out infinite;
+}
+
+@keyframes sctaFloatBtn {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .p-process-step {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .service-img-wrapper {
+    width: 45%;
+  }
+  .services-hero {
+    min-height: calc(70vh + 72px);
+    background-position: left top;
+  }
+
+  .services-list {
+    padding: 80px 45px;
+  }
+
+  .service-card-row,
+  .service-card-row.reverse {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .service-card-row .ser-img {
+    width: 100%;
+  }
+
+  .scta-buttons {
+    flex-direction: column;
+  }
+
+  .services-scta {
+    margin: 40px 20px;
+    padding: 40px 20px;
+  }
+
+  .service-card-row.reverse .ser-img {
+    margin-right: 0px;
+  }
+
+  .service-card-row.reverse .service-s-content {
+    padding-left: 0px;
+    gap: 20px;
+  }
+
+  .service-s-content {
+    width: -webkit-fill-available;
+    max-width: none;
+    margin: 0px 7%;
+  }
+}
+
+@media (max-width: 606px) {
+  .service-s-content {
+    display: block;
+  }
+
+  .service-left {
+    width: 100%;
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: center;
+  }
+
+  .service-s-content h3 {
+    margin: 0;
+    margin-left: 15px;
+  }
+
+  .service-right li {
+    margin: auto;
+  }
+}
+
+@media (max-width: 426px) {
+  .services-hero {
+    min-height: calc(70vh + 72px);
+    background-position: center top;
+  }
+
+  .service-card-row .service-s-content {
+    margin-right: 0px;
+    margin-bottom: 35px;
+  }
+
+  .service-s-content {
+    margin-left: 0;
+  }
+
+  .service-right li {
+    margin-left: 15px;
+  }
+
+  .service-s-content h3 {
+    font-size: 22px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 320px) {
+  .services-hero-content h1 {
+    font-size: 40px;
+  }
+
+  .services-hero-content p {
+    font-size: 13px;
+  }
+
+  .services-list {
+    padding: 40px 15px;
+  }
+
+  .service-s-content h3 {
+    font-size: 22px;
+    margin: auto 0;
+    margin-left: 10px;
+  }
+
+  .service-card-row,
+  .service-card-row.reverse {
+    flex-direction: column;
+    padding: 15px;
+  }
+}
+
+/* ===============================
+   ✅ PROCESS SECTION (FIXED CLEAN)
+================================ */
+
+.p-process-section {
+  background: var(--bg);
+  padding: 50px 40px;
+}
+
+.p-process-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.p-process-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: var(--text-dark);
+}
+
+/* BOX */
+.p-process-box {
+  position: relative;
+  width: 100%;
+  background-color: #feeeb3;
+  border-radius: 30px;
+  padding: 60px 40px;
+  overflow: hidden;
+}
+
+/* CURVE */
+.process-line {
+  position: absolute;
+  top: 120px;
+  left: 0;
+  width: 100%;
+  height: 260px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* STEPS HOLDER */
+.p-process-step {
+  position: relative;
+  width: 100%;
+  height: 420px;
+}
+
+/* STEP BASE */
+.p-step {
+  position: absolute;
+  width: 220px;
+  text-align: center;
+  z-index: 2;
+}
+
+/* p-circle */
+.p-circle {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: #fff;
+  border: 8px solid rgb(255 193 7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 auto;
+  color: var(--text-dark);
+}
+
+/* CONTENT */
+.p-step-content {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p-step-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 16px 0 8px;
+}
+
+.p-step-content p {
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 200px;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.p-step-1 {
+  top: 7px;
+  left: 125px;
+}
+
+.p-step-2 {
+  left: 368px;
+  bottom: 100px;
+}
+
+.p-step-3 {
+  top: 0px;
+  right: 373px;
+}
+
+.p-step-4 {
+  right: 120px;
+  bottom: 92px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.p-step-4 .p-step-content {
+  margin-bottom: 18px;
+}
+/* 
+
+@media (max-width: 1025px) {
+  .p-step-1 {
+    top: 9px;
+    left: -39px;
+  }
+
+  .p-step-2 {
+    left: 209px;
+    bottom: 100px;
+  }
+
+  .p-step-3 {
+    top: 0px;
+    right: 175px;
+  }
+
+  .p-step-4 {
+    right: -63px;
+    bottom: 92px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+} */
+
+/* ==========================================
+   FORMULA: 1379px -> 1301px
+========================================== */
+@media (max-width: 1379px) and (min-width: 1301px) {
+  /* step 1 and 2 same */
+  .p-step-1 {
+    top: 7px;
+    left: 125px;
+  }
+
+  .p-step-2 {
+    left: 368px;
+    bottom: 100px;
+  }
+
+  /* step 3 right: 373 -> 290 */
+  .p-step-3 {
+    top: 0px;
+    right: calc(290px + (373 - 290) * ((100vw - 1301px) / (1379 - 1301)));
+  }
+
+  /* step 4 right: 120 -> 54 */
+  .p-step-4 {
+    right: calc(54px + (120 - 54) * ((100vw - 1301px) / (1379 - 1301)));
+    bottom: 92px;
+
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+/* ==========================================
+   FORMULA: 1300px -> 1213px
+========================================== */
+@media (max-width: 1300px) and (min-width: 1213px) {
+  /* process line fixed */
+  .process-line {
+    position: absolute !important;
+    top: 154px !important;
+    left: 164px !important;
+    width: 69% !important;
+    height: 260px !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+  }
+
+  /* step 1 fixed */
+  .p-step-1 {
+    top: 68px;
+    left: 46px;
+  }
+
+  /* step 2 fixed */
+  .p-step-2 {
+    left: 305px;
+    bottom: 40px;
+  }
+
+  /* step 3 right: 362 -> 296 */
+  .p-step-3 {
+    top: 55px;
+    right: calc(296px + (362 - 296) * ((100vw - 1213px) / (1300 - 1213)));
+  }
+
+  /* step 4 right: 97 -> 49 */
+  .p-step-4 {
+    right: calc(49px + (97 - 49) * ((100vw - 1213px) / (1300 - 1213)));
+    bottom: 37px;
+
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+/* ==========================================
+   FORMULA: 1212px -> 1025px
+========================================== */
+@media (max-width: 1212px) and (min-width: 1025px) {
+  .p-step-1 {
+    top: 7px;
+    left: calc(-30px + (54 - (-30)) * ((100vw - 1025px) / (1212 - 1025)));
+  }
+
+  .p-step-2 {
+    left: calc(209px + (314 - 209) * ((100vw - 1025px) / (1212 - 1025)));
+    bottom: 100px;
+  }
+
+  .p-step-3 {
+    top: 0px;
+    right: calc(182px + (263 - 182) * ((100vw - 1025px) / (1212 - 1025)));
+  }
+
+  .p-step-4 {
+    right: calc(-51px + (0 - (-51)) * ((100vw - 1025px) / (1212 - 1025)));
+    bottom: 92px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+/* TABLET (≤1024px) */
+/* @media (max-width: 1024px) {
+  .p-process-step {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    height: auto;
+  }
+
+  .p-step {
+    position: relative;
+    flex: 1;
+    max-width: 25%;
+    text-align: center;
+  }
+
+  .process-line {
+    top: 50px;
+  }
+
+  .p-step-1,
+  .p-step-2,
+  .p-step-3,
+  .p-step-4 {
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+  }
+} */
+/* ==========================================
+   FORMULA: 1024px -> 769px
+========================================== */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .p-step-1 {
+    top: calc(45px + (7 - 45) * ((100vw - 769px) / (1024 - 769)));
+    left: calc(-76px + (-30 - (-76)) * ((100vw - 769px) / (1024 - 769)));
+  }
+
+  .p-step-2 {
+    left: calc(94px + (209 - 94) * ((100vw - 769px) / (1024 - 769)));
+    bottom: calc(140px + (100 - 140) * ((100vw - 769px) / (1024 - 769)));
+  }
+
+  .p-step-3 {
+    top: calc(40px + (0 - 40) * ((100vw - 769px) / (1024 - 769)));
+    right: calc(105px + (182 - 105) * ((100vw - 769px) / (1024 - 769)));
+  }
+
+  .p-step-4 {
+    right: calc(-96px + (-59 - (-96)) * ((100vw - 769px) / (1024 - 769)));
+    bottom: calc(133px + (110 - 133) * ((100vw - 769px) / (1024 - 769)));
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  /* curve hide */
+  .process-line {
+    display: none !important;
+  }
+
+  /* wrapper + box must grow */
+  .p-process-wrapper,
+  .p-process-box,
+  .s-process-container {
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* center container */
+  .s-process-container {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 40px 0 !important;
+  }
+
+  /* step list container */
+  .p-process-step {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 45px !important;
+  }
+
+  /* reset absolute steps */
+  .p-step {
+    position: relative !important;
+
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 0 auto !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* center the content */
+  .p-step-content {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .p-step-content p {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  /* ✅ STEP 2: make circle on top, content below */
+  .p-step-2 {
+    flex-direction: column !important;
+  }
+
+  .p-step-2 .p-circle {
+    order: 1;
+    margin-bottom: 14px;
+  }
+
+  .p-step-2 .p-step-content {
+    order: 2;
+  }
+
+  /* ✅ STEP 4: make content on top, circle below */
+  .p-step-4 {
+    flex-direction: column-reverse !important;
+  }
+
+  .p-step-4 .p-step-content {
+    order: 1;
+    margin-bottom: 14px;
+  }
+
+  .p-step-4 .p-circle {
+    order: 2;
+    margin-top: 16px;
+  }
+}
+
+/* ✅ Improve visibility for tablets and phones */
+@media (max-width: 768px) {
+  .services-hero {
+    background-position: 15% center;
+  }
+}
+
+@media (max-width: 425px) {
+  .services-hero {
+    background-position: 30% 15%;
+  }
+}
+
+@media (max-width: 320px) {
+  .services-hero {
+    background-position: 29% 0% !important;
+  }
+}

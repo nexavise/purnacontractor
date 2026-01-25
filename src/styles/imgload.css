@@ -1,0 +1,48 @@
+.animated-service-img-wrapper {
+  /* width: 45%; */
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Final Image */
+.animated-service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Skeleton Loader */
+.img-skeleton {
+  width: 100%;
+  height: 260px; /* adjust same as image height */
+  border-radius: 20px;
+  background: linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%);
+  background-size: 200% 100%;
+  animation: skeletonMove 1.4s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  font-size: 14px;
+}
+
+@keyframes skeletonMove {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

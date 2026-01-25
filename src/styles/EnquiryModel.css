@@ -1,0 +1,112 @@
+/* =========================
+   RESPONSIVE STYLES
+========================= */
+
+/* Tablets & small laptops */
+@media (max-width: 1024px) {
+  .modal {
+    width: 90%;
+  }
+}
+
+/* Tablets / Large phones */
+@media (max-width: 768px) {
+  .modal {
+    grid-template-columns: 1fr;
+    width: 85%;
+  }
+
+  .modal-left {
+    padding: 28px;
+    text-align: center;
+  }
+
+  .modal-left h2 {
+    font-size: 26px;
+  }
+
+  .modal-right {
+    padding: 28px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .modal {
+    border-radius: 12px;
+  }
+
+  .modal-left {
+    padding: 22px;
+  }
+
+  .modal-left h2 {
+    font-size: 22px;
+  }
+
+  .modal-left p {
+    font-size: 14px;
+  }
+
+  .modal-right {
+    padding: 22px;
+  }
+
+  .modal-right h3 {
+    font-size: 18px;
+  }
+
+  .modal-right input,
+  .modal-right select,
+  .modal-right textarea {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .modal-close {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+
+/* Ultra-small phones (320px) */
+@media (max-width: 360px) {
+  .modal-left {
+    padding: 18px;
+  }
+
+  .modal-left h2 {
+    font-size: 20px;
+  }
+
+  .modal-left p {
+    font-size: 13px;
+  }
+
+  .modal-right {
+    padding: 18px;
+  }
+
+  .modal-right h3 {
+    font-size: 16px;
+  }
+
+  .submit-btn {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
+
+/* Handle small height devices */
+@media (max-height: 600px) {
+  .modal {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}
