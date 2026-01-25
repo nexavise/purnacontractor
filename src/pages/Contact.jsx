@@ -15,6 +15,7 @@ import SEO from "../components/SEO";
 import { useNavigate } from "react-router-dom";
 import Turnstile from "react-turnstile";
 
+
 const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
 /* eslint-disable no-unused-vars */
@@ -83,56 +84,47 @@ export default function Contact() {
 
     setStatus("loading");
 
-    const handleSubmit = async (e) => {
-  e.preventDefault();
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          turnstileToken: token,
+        }),
+      });
 
-  if (!token) {
-    alert("Please verify you are human.");
-    return;
-  }
+      const data = await res.json();
 
-  setStatus("loading");
+      if (!res.ok) throw new Error(data?.message || "Failed");
 
-  try {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...formData, turnstileToken: token }),
-    });
+      setStatus("success");
+      setShowSuccess(true);
 
-    const data = await res.json();
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
 
-    if (!res.ok) throw new Error(data?.message || "Failed");
+      setToken(null);
+      setTsResetKey((k) => k + 1);
 
-    setStatus("success");
-    setShowSuccess(true);
-
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
-
-    setToken(null);
-    setTsResetKey((k) => k + 1);
-
-    setTimeout(() => {
-      setShowSuccess(false);
+      setTimeout(() => {
+        setShowSuccess(false);
+        setStatus("idle");
+        navigate("/");
+      }, 3000);
+    } catch (err) {
+      alert(err.message || "Failed to send message");
       setStatus("idle");
-      navigate("/");
-    }, 3000);
-  } catch (err) {
-    alert(err.message || "Failed to send message");
-    setStatus("idle");
 
-    // reset turnstile on failure
-    setToken(null);
-    setTsResetKey((k) => k + 1);
-  }
-};
-
+      setToken(null);
+      setTsResetKey((k) => k + 1);
+    }
+  };
 
   const [satellite, setSatellite] = useState(false);
 
@@ -249,10 +241,11 @@ export default function Contact() {
                     <Turnstile
                       key={tsResetKey}
                       sitekey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
-                      onVerify={(t) => setToken(t)}
+                      onVerify={(t) => {
+                        setToken(t);
+                      }}
                       onExpire={() => {
                         setToken(null);
-                        alert("Verification expired. Please verify again.");
                       }}
                       onError={() => {
                         setToken(null);
@@ -270,6 +263,10 @@ export default function Contact() {
                       {status === "loading" ? (
                         <>
                           <ImSpinner2 className="spinner" /> Sending...
+                        </>
+                      ) : !token ? (
+                        <>
+                          <ImSpinner2 className="spinner" /> Wait a second...
                         </>
                       ) : (
                         <>
