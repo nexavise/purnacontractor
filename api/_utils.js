@@ -79,11 +79,6 @@ export const verifyTurnstileToken = async (turnstileToken, ip = null) => {
 
     const result = await response.json();
 
-    console.log("[Turnstile] verify result:", {
-      success: result.success,
-      errorCodes: result["error-codes"],
-    });
-
     return result;
   } catch (err) {
     console.error("[Turnstile] verification request failed:", err);
