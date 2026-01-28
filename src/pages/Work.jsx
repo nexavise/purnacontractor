@@ -31,7 +31,7 @@ const categories = ["All", "Residential", "Commercial", "Interior", "Exterior"];
 const works = [
   {
     id: 1,
-    title: "Modern d Accent Wall Finish",
+    title: "Modern Accent Wall Finish",
     category: "Interior",
     image: work1,
   },
