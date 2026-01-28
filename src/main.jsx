@@ -1,4 +1,4 @@
-import "./main.css"; // <-- IMPORTANT
+import "./main.css";
 
 import React from "react";
 import ReactDOM from "react-dom/client";
